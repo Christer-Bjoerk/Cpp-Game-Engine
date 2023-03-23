@@ -29,9 +29,9 @@ int lvl1[20][25] =
 Map::Map()
 {
 	// Map Textures
-	dirt = TextureManager::LoadTexture("Assets/dirt.png");
-	grass = TextureManager::LoadTexture("Assets/grass.png");
-	water = TextureManager::LoadTexture("Assets/water.png");
+	dirt = TextureManager::LoadTexture("Assets/Dirt.png");
+	grass = TextureManager::LoadTexture("Assets/Grass.png");
+	water = TextureManager::LoadTexture("Assets/Water.png");
 
 	LoadMap(lvl1);
 
@@ -44,6 +44,19 @@ Map::Map()
 }
 
 void Map::LoadMap(int arr[20][25])
+{
+	for (int row = 0; row < 20; row++)
+	{
+		for (int column = 0; column < 25; column++)
+		{
+			map[row][column] = arr[row][column];
+		}
+	}
+
+	
+}
+
+void Map::DrawMap()
 {
 	int type = 0;
 
@@ -72,10 +85,5 @@ void Map::LoadMap(int arr[20][25])
 			}
 		}
 	}
-}
-
-void Map::DrawMap()
-{
-
 }
 
